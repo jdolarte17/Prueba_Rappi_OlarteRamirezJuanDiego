@@ -220,23 +220,14 @@ pnpm build
 - Las gráficas se renderizan sin lag gracias al muestreo inteligente
 - El scroll del dashboard es suave incluso con muchos datos
 
-## 🎯 Próximas Mejoras Sugeridas
+Este proyecto fue creado con Vite, por lo que requiere levantar un servidor de desarrollo.
+para instalar dependencias ejecutar el siguiente comando npm install --legacy-peer-deps
+luego ejecuta npm run dev y debe de dar el link
 
-1. **Exportar Reporte PDF** — Agregar botón para descargar un PDF con KPIs, gráficas y tabla
-2. **Comparación Multimétricas** — Mostrar múltiples líneas de color en la gráfica cuando se cargan varios CSVs
-3. **Detección de Anomalías** — Resaltar automáticamente caídas >10% en la gráfica con marcadores rojos
-4. **Descarga de Datos Filtrados** — Exportar tabla de eventos como CSV
-5. **Historial de Análisis** — Guardar análisis anteriores en localStorage para comparación
 
-## 📄 Licencia
+## Licencia
 
 Este proyecto es propiedad de Rappi. Uso interno únicamente.
-
-## 🤝 Soporte
-
-Para reportar bugs o sugerencias, contacta al equipo de desarrollo.
-
----
 
 **Versión**: 1.0.0  
 **Última actualización**: Abril 2026  
