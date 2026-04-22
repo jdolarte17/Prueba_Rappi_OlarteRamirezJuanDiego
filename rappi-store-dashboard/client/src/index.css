@@ -1,0 +1,222 @@
+/*
+ * DESIGN PHILOSOPHY: Editorial Financiero / Bloomberg Terminal Moderno
+ * Paleta: crema/tinta con acentos rojo Rappi, teal y ámbar
+ * Tipografía: Playfair Display (títulos/KPI) + IBM Plex Mono (labels) + Source Serif 4 (cuerpo)
+ * Layout: columnas asimétricas, bordes de línea, sin cards flotantes
+ * Estética: periódico financiero de alta densidad informacional
+ */
+
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: 2px;
+  --radius-md: 2px;
+  --radius-lg: 4px;
+  --radius-xl: 4px;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Rappi Editorial Palette */
+  --cream: #F5F0E8;
+  --paper: #FDFAF4;
+  --ink: #1A1208;
+  --rappi-red: #C8321A;
+  --rappi-red-light: #E84C2E;
+  --sand: #E8DFC8;
+  --sand-dark: #CFC0A0;
+  --teal: #1A7A6E;
+  --teal-light: #24A898;
+  --amber: #D4820A;
+  --border-color: #D4C8B0;
+  --muted-text: #8A7D6A;
+}
+
+:root {
+  --radius: 0.125rem;
+  --background: #F5F0E8;
+  --foreground: #1A1208;
+  --card: #FDFAF4;
+  --card-foreground: #1A1208;
+  --popover: #FDFAF4;
+  --popover-foreground: #1A1208;
+  --primary: #C8321A;
+  --primary-foreground: #FDFAF4;
+  --secondary: #E8DFC8;
+  --secondary-foreground: #1A1208;
+  --muted: #E8DFC8;
+  --muted-foreground: #8A7D6A;
+  --accent: #1A7A6E;
+  --accent-foreground: #FDFAF4;
+  --destructive: #C8321A;
+  --border: #D4C8B0;
+  --input: #E8DFC8;
+  --ring: #C8321A;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    box-sizing: border-box;
+  }
+  body {
+    background-color: var(--cream);
+    color: var(--ink);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  a[href],
+  select:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      max-width: 1440px;
+    }
+  }
+
+  /* Editorial typography utilities */
+  .font-display {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+
+  .font-mono-editorial {
+    font-family: 'IBM Plex Mono', 'Courier New', monospace;
+  }
+
+  .font-serif-body {
+    font-family: 'Source Serif 4', Georgia, serif;
+  }
+
+  /* Section divider — newspaper style */
+  .section-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0;
+  }
+  .section-divider::before,
+  .section-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background-color: var(--border-color);
+  }
+  .section-divider span {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted-text);
+    white-space: nowrap;
+  }
+
+  /* KPI counter animation */
+  @keyframes countUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .kpi-animate {
+    animation: countUp 0.4s ease-out forwards;
+  }
+
+  /* Typing indicator */
+  @keyframes typingDot {
+    0%, 60%, 100% { opacity: 0.2; transform: translateY(0); }
+    30% { opacity: 1; transform: translateY(-4px); }
+  }
+  .typing-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--muted-text);
+    animation: typingDot 1.2s infinite;
+  }
+  .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+  .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+  /* Pulse dot */
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+  .pulse-dot {
+    animation: pulse-dot 1.5s ease-in-out infinite;
+  }
+
+  /* Drag & drop zone */
+  .dropzone-active {
+    border-color: var(--teal) !important;
+    background-color: rgba(26, 122, 110, 0.04) !important;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--sand);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--sand-dark);
+    border-radius: 0;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--muted-text);
+  }
+
+  /* Recharts custom tooltip */
+  .recharts-tooltip-wrapper .custom-tooltip {
+    background: var(--paper);
+    border: 1px solid var(--border-color);
+    padding: 8px 12px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--ink);
+  }
+}
