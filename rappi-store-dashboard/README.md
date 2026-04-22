@@ -211,10 +211,10 @@ pnpm build
 
 ### Chatbot
 - El system prompt se construye dinámicamente con los datos cargados
+- para la KEY API iniciar sesión en openrouter y generar una API KEY
 - Las respuestas están limitadas a 800 tokens
-- Si la API Key es inválida, se muestra un error en el chat
 - El chat permanece deshabilitado si se omite la configuración
-
+- Si la API Key es inválida, se muestra un error en el chat
 ### Rendimiento
 - Soporta archivos CSV con miles de puntos de datos
 - Las gráficas se renderizan sin lag gracias al muestreo inteligente
