@@ -2,7 +2,7 @@
 
 Dashboard inteligente de análisis de disponibilidad de tiendas para Rappi. Carga archivos CSV, visualiza KPIs, gráficas interactivas y obtén análisis en tiempo real mediante un chatbot impulsado por IA.
 
-## 🎯 Características Principales
+## Características Principales
 
 ### 1. **Carga de Datos CSV**
 - Interfaz drag & drop para cargar múltiples archivos CSV simultáneamente
@@ -67,7 +67,7 @@ Modelo: anthropic/claude-3-haiku
 Max Tokens: 800
 ```
 
-## 🎨 Diseño Visual
+## Diseño Visual
 
 ### Filosofía de Diseño
 **Editorial Financiero** — Estética de periódico financiero / Bloomberg Terminal moderno con densidad informacional sin decoración superflua.
@@ -99,7 +99,7 @@ Max Tokens: 800
 - **Sin Cards Flotantes**: Secciones delimitadas por líneas horizontales estilo periódico
 - **Animaciones Sutiles**: Transiciones de 150ms ease-out, contador de KPIs con fade-in
 
-## 📊 Formato de Entrada CSV
+## Formato de Entrada CSV
 
 ### Estructura Requerida
 ```
@@ -118,7 +118,7 @@ Metadata1,Metadata2,Disponibilidad de Tiendas,Metadata4,Mon Jan 01 2024 00:00:00
 Store_Data,Region_A,Disponibilidad de Tiendas,Active,1250,1200,1180
 ```
 
-## 🚀 Flujo de Uso
+## Flujo de Uso
 
 ### Paso 1: Carga de Datos
 1. Abre la aplicación
@@ -141,7 +141,7 @@ Store_Data,Region_A,Disponibilidad de Tiendas,Active,1250,1200,1180
 ### Paso 4: Nuevo Análisis
 - Haz clic en "↩ NUEVO" en la topbar para volver a la pantalla de carga
 
-## 🛠️ Stack Técnico
+## Stack Técnico
 
 - **Frontend**: React 19 + TypeScript
 - **Gráficas**: Recharts
@@ -151,7 +151,7 @@ Store_Data,Region_A,Disponibilidad de Tiendas,Active,1250,1200,1180
 - **Build**: Vite
 - **Hosting**: Manus (web-static)
 
-## 📁 Estructura del Proyecto
+## Estructura del Proyecto
 
 ```
 rappi-store-dashboard/
@@ -173,7 +173,7 @@ rappi-store-dashboard/
 └── package.json                   # Dependencias
 ```
 
-## 🔧 Desarrollo Local
+## Desarrollo Local
 
 ### Requisitos
 - Node.js 18+
@@ -196,7 +196,7 @@ Abre `http://localhost:3000` en tu navegador.
 pnpm build
 ```
 
-## 📝 Notas Importantes
+## Notas Importantes
 
 ### Parsing de CSV
 - El parser es tolerante a comillas en valores
